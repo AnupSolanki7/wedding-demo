@@ -1,0 +1,353 @@
+@import "tailwindcss";
+
+@theme {
+  --color-maroon: #650d19;
+  --color-maroon-deep: #3a0610;
+  --color-burgundy: #800020;
+  --color-gold: #b88632;
+  --color-gold-light: #e3c27a;
+  --color-gold-pale: #f3dfa8;
+  --color-gold-dark: #7a5418;
+  --color-beige: #f8ebd1;
+  --color-ivory: #fff7e8;
+  --color-rose: #e8a0a0;
+  --color-haldi: #e9ad24;
+  --color-brown: #51351e;
+  --color-leaf: #3f6b2a;
+  --color-paithani: #1d5b3c;
+  --color-paithani-pink: #c8436e;
+
+  --font-serif: var(--ff-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-cinzel: var(--ff-cinzel), "Cinzel", Georgia, serif;
+  --font-script: var(--ff-script), "Great Vibes", cursive;
+  --font-body: var(--ff-lora), "Lora", Georgia, serif;
+  --font-gujarati: var(--ff-gujarati), "Noto Serif Gujarati", serif;
+  --font-devanagari: var(--ff-devanagari), "Tiro Devanagari Marathi", serif;
+
+  --ease-royal: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ------------------------------------------------------------------ base */
+
+html {
+  background: var(--color-maroon);
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100svh;
+  font-family: var(--font-body);
+  color: var(--color-brown);
+  background: var(--color-beige);
+  overflow-x: clip;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-gold-light);
+  color: var(--color-maroon);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* ------------------------------------------------------------- surfaces */
+
+.paper {
+  background-color: var(--color-beige);
+  background-image:
+    url("/assets/textures/paper-grain.svg"),
+    radial-gradient(ellipse at 50% 30%, rgba(255, 247, 232, 0.75), rgba(255, 247, 232, 0) 60%),
+    radial-gradient(ellipse at center, transparent 55%, rgba(81, 53, 30, 0.16) 100%);
+  background-size: 280px 280px, 100% 100%, 100% 100%;
+}
+
+.paper-ivory {
+  background-color: var(--color-ivory);
+  background-image:
+    url("/assets/textures/paper-grain.svg"),
+    radial-gradient(ellipse at center, transparent 60%, rgba(122, 84, 24, 0.12) 100%);
+  background-size: 280px 280px, 100% 100%;
+}
+
+.maroon-silk {
+  background-color: var(--color-maroon);
+  background-image:
+    url("/assets/textures/damask.svg"),
+    radial-gradient(ellipse at 50% 42%, #8d1629 0%, #650d19 48%, #3a0610 100%);
+  background-size: 160px 160px, 100% 100%;
+}
+
+.bandhani {
+  background-image: url("/assets/textures/bandhani.svg");
+  background-size: 36px 36px;
+}
+
+/* ---------------------------------------------------------- gold foil */
+
+.text-foil {
+  background: linear-gradient(
+    100deg,
+    #7a5418 0%,
+    #c99a45 16%,
+    #f3dfa8 30%,
+    #b88632 46%,
+    #ecd38f 62%,
+    #8a6020 80%,
+    #d8b46a 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: foil 9s linear infinite;
+}
+
+.text-foil-dark {
+  background: linear-gradient(100deg, #6b4613 0%, #a77a2c 30%, #d9b468 48%, #8a6020 66%, #6b4613 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: foil 9s linear infinite;
+}
+
+@keyframes foil {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* Thin double gold rule frame used by cards and panels */
+.gold-frame {
+  position: relative;
+  border: 1px solid rgba(184, 134, 50, 0.85);
+  box-shadow:
+    inset 0 0 0 5px transparent,
+    inset 0 0 0 6px rgba(184, 134, 50, 0.55);
+}
+
+/* Light sweep that glides over gold surfaces */
+.shimmer-sweep {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    105deg,
+    transparent 35%,
+    rgba(255, 244, 214, 0.55) 48%,
+    rgba(255, 244, 214, 0) 60%
+  );
+  background-size: 250% 100%;
+  mix-blend-mode: soft-light;
+  animation: sweep 5.5s ease-in-out infinite;
+}
+
+@keyframes sweep {
+  0%,
+  35% {
+    background-position: 130% 0;
+  }
+  100% {
+    background-position: -120% 0;
+  }
+}
+
+/* -------------------------------------------------------- motion kit */
+
+@keyframes seal-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 3px 4px rgba(40, 4, 10, 0.55)) drop-shadow(0 0 0 rgba(243, 223, 168, 0));
+  }
+  50% {
+    filter: drop-shadow(0 3px 4px rgba(40, 4, 10, 0.55)) drop-shadow(0 0 14px rgba(243, 223, 168, 0.75));
+  }
+}
+.seal-glow {
+  animation: seal-glow 2.8s ease-in-out infinite;
+}
+
+@keyframes dust {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.6);
+    opacity: 0;
+  }
+  20% {
+    opacity: var(--o, 0.8);
+  }
+  80% {
+    opacity: var(--o, 0.8);
+  }
+  100% {
+    transform: translate3d(var(--dx, 20px), -120px, 0) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.6) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(45deg);
+  }
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(var(--sway-from, -2deg));
+  }
+  50% {
+    transform: rotate(var(--sway-to, 2deg));
+  }
+}
+.sway {
+  animation: sway var(--sway-dur, 6s) ease-in-out infinite;
+  transform-origin: var(--origin, 50% 0%);
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    transform: scale(1, 1) skewX(0deg);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(0.94, 1.06) skewX(-2deg);
+  }
+  50% {
+    transform: scale(1.04, 0.95) skewX(1.5deg);
+    opacity: 0.92;
+  }
+  75% {
+    transform: scale(0.97, 1.04) skewX(-1deg);
+  }
+}
+.flicker {
+  animation: flicker 1.6s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin-slow {
+  animation: spin-slow 120s linear infinite;
+}
+
+@keyframes nudge {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+.nudge {
+  animation: nudge 2.2s ease-in-out infinite;
+}
+
+/* Falling petals: the track spans the container height so translateY(%) maps to it */
+@keyframes petal-fall {
+  from {
+    transform: translate3d(0, -8%, 0);
+  }
+  to {
+    transform: translate3d(0, 104%, 0);
+  }
+}
+@keyframes petal-drift {
+  0%,
+  100% {
+    transform: translate3d(calc(var(--drift, 30px) * -1), 0, 0) rotate(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: translate3d(var(--drift, 30px), 0, 0) rotate(160deg) rotateY(180deg);
+  }
+}
+.petal-track {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  will-change: transform;
+  animation: petal-fall var(--fall-dur, 12s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+.petal {
+  display: block;
+  will-change: transform;
+  animation: petal-drift var(--drift-dur, 5s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+.petals-paused .petal-track,
+.petals-paused .petal {
+  animation-play-state: paused;
+}
+
+/* Wax-sealed envelope */
+.envelope-stage {
+  perspective: 1400px;
+  perspective-origin: 50% 0%;
+}
+.envelope-size {
+  width: min(86vw, 520px, max(250px, calc((100svh - 370px) * 1.5)));
+  aspect-ratio: 3 / 2;
+}
+.env-flap {
+  transform-origin: 50% 0%;
+  transform-style: preserve-3d;
+}
+.env-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Hide scrollbars on the mobile gallery rail while keeping it scrollable */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ------------------------------------------------------ reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .petal-rain,
+  .gold-dust {
+    display: none;
+  }
+}
