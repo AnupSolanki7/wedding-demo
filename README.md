@@ -1,4 +1,4 @@
-# Apurva & Dharmil — Wedding Invitation
+# Ananya & Rohan — Wedding Invitation (Demo)
 
 A cinematic digital wedding invitation built with Next.js (App Router), Tailwind CSS v4, Framer Motion, GSAP + ScrollTrigger and Lenis.
 
@@ -13,7 +13,7 @@ npm run build && npm start
 Everything guests read — names, dates, times, venues, map links, themes, gallery captions — lives in
 `src/data/wedding.ts`. Change it there and every section updates.
 
-Set `NEXT_PUBLIC_SITE_URL` to the deployed URL (e.g. `https://apurva-weds-dharmil.vercel.app`) so the
+Set `NEXT_PUBLIC_SITE_URL` to the deployed URL (e.g. `https://ananya-weds-rohan.vercel.app`) so the
 WhatsApp/social preview image resolves to an absolute link.
 
 ## Replacing the placeholder illustrations with real photographs

@@ -157,7 +157,7 @@ export function Monogram({
   className,
   style,
   first = "A",
-  second = "D",
+  second = "R",
   tone = "gold",
 }: SvgProps & { first?: string; second?: string; tone?: "gold" | "ivory" }) {
   const g = useSvgId("mg");

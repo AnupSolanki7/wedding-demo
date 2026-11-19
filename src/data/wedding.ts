@@ -42,9 +42,9 @@ export interface GalleryImage extends ImageAsset {
 
 export const wedding = {
   couple: {
-    bride: "Apurva",
-    groom: "Dharmil",
-    monogram: { first: "A", second: "D" },
+    bride: "Ananya",
+    groom: "Rohan",
+    monogram: { first: "A", second: "R" },
   },
 
   invocation: "|| Shree Ganeshaya Namah ||",
@@ -73,9 +73,9 @@ export const wedding = {
       timeLabel: "06:30 PM",
       startsAt: "2026-12-04T18:30:00+05:30",
       venue: {
-        name: "Jay Malhar Agro Resort",
-        address: "Necklace Point, Bhor.",
-        mapUrl: "https://share.google/anKyk9ypxkrBqEaQl",
+        name: "Sunrise Meadows Resort",
+        address: "Lakeview Road, Lonavala.",
+        mapUrl: "https://maps.google.com/?q=Lonavala",
       },
       dressCode: "Traditional Yellow",
       swatches: ["#E9AD24", "#F6C33A", "#D9661A", "#3F6B2A"],
@@ -99,9 +99,9 @@ export const wedding = {
       timeLabel: "12:05 PM",
       startsAt: "2026-12-05T12:05:00+05:30",
       venue: {
-        name: "Gandharva Banquet & Lawns",
-        address: "Katraj, Pune.",
-        mapUrl: "https://share.google/f6AIbZEV6LbjgTxxf",
+        name: "Royal Orchid Banquet & Lawns",
+        address: "Baner, Pune.",
+        mapUrl: "https://maps.google.com/?q=Baner,+Pune",
       },
       dressCode: "Maharashtrian Elegance",
       swatches: ["#1D6B45", "#D14F7F", "#D6AC52", "#F3E6C8"],
@@ -121,10 +121,10 @@ export const wedding = {
       timeLabel: "06:00 PM",
       startsAt: "2026-12-05T18:00:00+05:30",
       venue: {
-        name: "Gandharva Banquet & Lawns",
-        address: "Katraj, Pune.",
+        name: "Royal Orchid Banquet & Lawns",
+        address: "Baner, Pune.",
         // Same venue as the Vaidik Vivah, so it shares that map link.
-        mapUrl: "https://share.google/f6AIbZEV6LbjgTxxf",
+        mapUrl: "https://maps.google.com/?q=Baner,+Pune",
       },
       dressCode: "Festive Glamour",
       swatches: ["#B0122B", "#E8A0A0", "#D6AC52", "#FBF1DD"],
@@ -136,12 +136,12 @@ export const wedding = {
   ] as WeddingEvent[],
 
   gallery: [
-    { src: "/assets/couple/couple-01.svg", alt: "Apurva and Dharmil", caption: "Two hearts, one promise" },
-    { src: "/assets/couple/couple-02.svg", alt: "Apurva and Dharmil", caption: "Blessed beginnings" },
-    { src: "/assets/couple/couple-03.svg", alt: "Apurva and Dharmil", caption: "Laughter & haldi" },
-    { src: "/assets/couple/couple-04.svg", alt: "Apurva and Dharmil", caption: "Forever starts here" },
-    { src: "/assets/couple/couple-05.svg", alt: "Apurva and Dharmil", caption: "Hand in hand" },
-    { src: "/assets/couple/couple-06.svg", alt: "Apurva and Dharmil", caption: "Always & always" },
+    { src: "/assets/couple/couple-01.svg", alt: "Ananya and Rohan", caption: "Two hearts, one promise" },
+    { src: "/assets/couple/couple-02.svg", alt: "Ananya and Rohan", caption: "Blessed beginnings" },
+    { src: "/assets/couple/couple-03.svg", alt: "Ananya and Rohan", caption: "Laughter & haldi" },
+    { src: "/assets/couple/couple-04.svg", alt: "Ananya and Rohan", caption: "Forever starts here" },
+    { src: "/assets/couple/couple-05.svg", alt: "Ananya and Rohan", caption: "Hand in hand" },
+    { src: "/assets/couple/couple-06.svg", alt: "Ananya and Rohan", caption: "Always & always" },
   ] as GalleryImage[],
 
   /**
